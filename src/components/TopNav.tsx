@@ -11,11 +11,11 @@ const navItems = [
 
 export default function TopNav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-amber-200/70 bg-white/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-4">
         <NavLink
           to="/"
-          className="flex items-center gap-2 text-base font-semibold tracking-wide text-white"
+          className="flex items-center gap-2 text-base font-semibold tracking-wide text-gray-900"
         >
           <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-white/90">
             <img
@@ -35,7 +35,9 @@ export default function TopNav() {
               className={({ isActive }) =>
                 [
                   'rounded-lg px-3 py-2 text-sm transition',
-                  isActive ? 'bg-white/10 text-white' : 'text-zinc-200 hover:text-white',
+                  isActive
+                    ? 'bg-amber-100/80 font-semibold text-amber-700'
+                    : 'text-gray-700 hover:bg-white/60 hover:text-amber-600',
                 ].join(' ')
               }
             >
@@ -46,7 +48,7 @@ export default function TopNav() {
 
         <NavLink
           to="/contact"
-          className="rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+          className="rounded-lg bg-gradient-to-r from-amber-600 to-amber-800 px-3 py-2 text-sm font-medium text-[#fffaf2] hover:from-amber-700 hover:to-amber-900"
         >
           合作咨询
         </NavLink>
@@ -61,7 +63,9 @@ export default function TopNav() {
               className={({ isActive }) =>
                 [
                   'rounded-lg px-3 py-2 text-sm transition',
-                  isActive ? 'bg-white/10 text-white' : 'bg-white/5 text-zinc-200 hover:text-white',
+                  isActive
+                    ? 'bg-amber-100/85 font-semibold text-amber-700'
+                    : 'bg-white/60 text-gray-700 hover:bg-white/80 hover:text-amber-600',
                 ].join(' ')
               }
             >

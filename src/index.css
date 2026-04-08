@@ -10,5 +10,194 @@ body,
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui,
+    -apple-system, Segoe UI, Roboto, sans-serif;
+  background-color: #f3eadf;
+}
+
+.figma-theme {
+  color: #374151;
+  --hk-accent-500: #d97706;
+  --hk-accent-600: #b45309;
+  --hk-accent-700: #92400e;
+  --hk-accent-soft: #fef3c7;
+  --hk-accent-softer: #fffbeb;
+}
+
+.figma-theme .text-white {
+  color: #111827;
+}
+
+.figma-theme .text-zinc-100 {
+  color: #1f2937;
+}
+
+.figma-theme .text-zinc-200 {
+  color: #374151;
+}
+
+.figma-theme .text-zinc-300 {
+  color: #6b7280;
+}
+
+.figma-theme .bg-slate-900\/55 {
+  background-color: rgb(255 250 245 / 0.84);
+}
+
+.figma-theme .bg-black\/40 {
+  background-color: rgb(247 234 214 / 0.7);
+}
+
+.figma-theme .bg-black\/30 {
+  background-color: rgb(249 239 224 / 0.78);
+}
+
+.figma-theme .bg-white\/5 {
+  background-color: rgb(255 255 255 / 0.66);
+}
+
+.figma-theme .bg-white\/10 {
+  background-color: rgb(255 255 255 / 0.82);
+}
+
+.figma-theme .bg-zinc-950\/70 {
+  background-color: rgb(255 249 242 / 0.9);
+}
+
+.figma-theme .bg-zinc-950 {
+  background-color: #eadfce;
+}
+
+.figma-theme .border-white\/10 {
+  border-color: rgb(180 145 110 / 0.2);
+}
+
+.figma-theme .border-white\/15 {
+  border-color: rgb(180 145 110 / 0.28);
+}
+
+.figma-theme .border-white\/20 {
+  border-color: rgb(180 145 110 / 0.35);
+}
+
+.figma-theme .hover\:bg-white\/10:hover {
+  background-color: rgb(255 255 255 / 0.92);
+}
+
+.figma-theme .hover\:text-white:hover {
+  color: #92400e;
+}
+
+.figma-theme .decoration-white\/30 {
+  text-decoration-color: rgb(180 145 110 / 0.45);
+}
+
+.figma-theme .hover\:decoration-white:hover {
+  text-decoration-color: rgb(146 99 50 / 0.85);
+}
+
+.figma-theme .from-emerald-500\/15 {
+  --tw-gradient-from: rgb(226 196 160 / 0.38) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(226 196 160 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.figma-theme .to-violet-500\/15 {
+  --tw-gradient-to: rgb(180 140 96 / 0.35) var(--tw-gradient-to-position);
+}
+
+.figma-theme .text-amber-100 {
+  color: #92400e;
+}
+
+.figma-theme .text-amber-600 {
+  color: var(--hk-accent-500);
+}
+
+.figma-theme .text-amber-700 {
+  color: var(--hk-accent-600);
+}
+
+.figma-theme .text-amber-800,
+.figma-theme .text-amber-900 {
+  color: var(--hk-accent-700);
+}
+
+.figma-theme .hover\:text-amber-600:hover,
+.figma-theme .hover\:text-amber-900:hover {
+  color: var(--hk-accent-700);
+}
+
+.figma-theme .border-amber-300\/30 {
+  border-color: rgb(180 145 110 / 0.32);
+}
+
+.figma-theme .border-amber-400\/20 {
+  border-color: rgb(180 145 110 / 0.3);
+}
+
+.figma-theme .bg-amber-300\/15 {
+  background-color: rgb(245 158 11 / 0.14);
+}
+
+.figma-theme .bg-amber-400\/10 {
+  background-color: rgb(245 158 11 / 0.12);
+}
+
+.figma-theme .from-amber-600 {
+  --tw-gradient-from: var(--hk-accent-500) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(217 119 6 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.figma-theme .to-amber-800 {
+  --tw-gradient-to: var(--hk-accent-700) var(--tw-gradient-to-position);
+}
+
+.figma-theme .hover\:from-amber-700:hover {
+  --tw-gradient-from: var(--hk-accent-600) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(180 83 9 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.figma-theme .hover\:to-amber-900:hover {
+  --tw-gradient-to: #78350f var(--tw-gradient-to-position);
+}
+
+.figma-theme .bg-emerald-400 {
+  background-color: var(--hk-accent-500);
+}
+
+.figma-theme .hover\:bg-emerald-300:hover {
+  background-color: var(--hk-accent-600);
+}
+
+.figma-theme .bg-emerald-400.text-zinc-950,
+.figma-theme .hover\:bg-emerald-300:hover.text-zinc-950 {
+  color: #fffaf2;
+}
+
+.figma-theme a.bg-white.text-zinc-950,
+.figma-theme button.bg-white.text-zinc-950 {
+  background-image: linear-gradient(90deg, var(--hk-accent-500), var(--hk-accent-700));
+  color: #fffaf2;
+}
+
+.figma-theme a.bg-white.text-zinc-950:hover,
+.figma-theme button.bg-white.text-zinc-950:hover {
+  background-image: linear-gradient(90deg, var(--hk-accent-600), #78350f);
+  color: #fffaf2;
+}
+
+.figma-theme a.border.border-white\/15.bg-white\/5.text-white,
+.figma-theme button.border.border-white\/15.bg-white\/5.text-white {
+  border-color: rgb(180 145 110 / 0.42);
+  background-color: rgb(255 255 255 / 0.72);
+  color: #374151;
+}
+
+.figma-theme a.border.border-white\/15.bg-white\/5.text-white:hover,
+.figma-theme button.border.border-white\/15.bg-white\/5.text-white:hover {
+  background-color: rgb(255 255 255 / 0.9);
+  color: #1f2937;
 }

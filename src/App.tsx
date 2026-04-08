@@ -11,10 +11,10 @@ import Team from './pages/Team'
 
 export default function App() {
   return (
-    <div className="relative min-h-full bg-transparent text-zinc-100">
+    <div className="figma-theme relative min-h-full bg-transparent text-zinc-100">
       <SiteBackground />
       <div className="relative z-10">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-slate-950/35" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[#f4e7d6]/[0.12]" />
         <TopNav />
         <main className="mx-auto w-full max-w-6xl px-4 py-10">
           <Routes>
