@@ -12,31 +12,31 @@ export default function MarkdownDoc({ title, markdown, lead }: Props) {
     <article className="mx-auto w-full max-w-4xl">
       {title ? (
         <div className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
             {title}
           </h1>
-          {lead ? <p className="mt-3 text-zinc-200">{lead}</p> : null}
+          {lead ? <p className="mt-3 text-gray-700">{lead}</p> : null}
         </div>
       ) : null}
 
-      <div className="space-y-4 text-zinc-200">
+      <div className="space-y-4 text-gray-700">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
             h1: ({ children }) => (
-              <h2 className="mt-10 text-2xl font-semibold text-white">{children}</h2>
+              <h2 className="mt-10 text-2xl font-semibold text-gray-900">{children}</h2>
             ),
             h2: ({ children }) => (
-              <h3 className="mt-8 text-xl font-semibold text-white">{children}</h3>
+              <h3 className="mt-8 text-xl font-semibold text-gray-900">{children}</h3>
             ),
             h3: ({ children }) => (
-              <h4 className="mt-6 text-lg font-semibold text-white">{children}</h4>
+              <h4 className="mt-6 text-lg font-semibold text-gray-900">{children}</h4>
             ),
-            p: ({ children }) => <p className="leading-7 text-zinc-200">{children}</p>,
+            p: ({ children }) => <p className="leading-7 text-gray-700">{children}</p>,
             a: ({ children, href }) => (
               <a
                 href={href}
-                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white"
+                className="text-amber-800 underline decoration-amber-800/30 underline-offset-4 hover:decoration-amber-800"
                 target={href?.startsWith('http') ? '_blank' : undefined}
                 rel={href?.startsWith('http') ? 'noreferrer' : undefined}
               >
@@ -47,12 +47,12 @@ export default function MarkdownDoc({ title, markdown, lead }: Props) {
             ol: ({ children }) => <ol className="list-decimal space-y-2 pl-6">{children}</ol>,
             li: ({ children }) => <li className="leading-7">{children}</li>,
             blockquote: ({ children }) => (
-              <blockquote className="border-l-2 border-white/20 pl-4 text-zinc-200">
+              <blockquote className="border-l-2 border-amber-900/15 pl-4 text-gray-700">
                 {children}
               </blockquote>
             ),
             code: ({ children }) => (
-              <code className="rounded bg-white/10 px-1.5 py-0.5 text-sm text-zinc-100">
+              <code className="rounded bg-white/80 px-1.5 py-0.5 text-sm text-gray-900">
                 {children}
               </code>
             ),
@@ -62,14 +62,14 @@ export default function MarkdownDoc({ title, markdown, lead }: Props) {
               </div>
             ),
             th: ({ children }) => (
-              <th className="border-b border-white/15 bg-white/5 px-3 py-2 font-semibold text-white">
+              <th className="border-b border-amber-900/10 bg-amber-50/50 px-3 py-2 font-semibold text-gray-900">
                 {children}
               </th>
             ),
             td: ({ children }) => (
-              <td className="border-b border-white/10 px-3 py-2 align-top">{children}</td>
+              <td className="border-b border-amber-900/10 px-3 py-2 align-top">{children}</td>
             ),
-            hr: () => <hr className="my-10 border-white/10" />,
+            hr: () => <hr className="my-10 border-amber-900/10" />,
           }}
         >
           {markdown}

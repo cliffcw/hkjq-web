@@ -3,87 +3,132 @@ import { Link } from 'react-router-dom'
 const productCards = [
   {
     title: '冻干速溶黑茶（主打单品）',
-    desc: '冻干结晶颗粒形态，即溶即饮，适配办公、差旅与日常饮用场景。',
+    desc: '冻干结晶颗粒形态，即溶即饮，兼顾便捷体验与礼赠质感。',
   },
   {
     title: '低温萃取与冻干结晶',
-    desc: '以低温流程降低热敏损耗风险，并通过冻干形成更稳定一致的形态。',
+    desc: '以低温工艺保留茶感层次，并通过冻干结晶呈现更稳定细腻的产品状态。',
   },
   {
     title: '标准化生产与品控',
-    desc: '以规范的生产与检测流程保障批次一致性，支持渠道规模化交付。',
+    desc: '以规范的生产与检测流程保障批次一致性，满足长期合作与高标准交付。',
   },
 ]
 
 const scenarios = [
-  { title: '办公便捷', desc: '一杯水即可冲调，减少冲泡门槛。' },
-  { title: '餐后饮用', desc: '适合作为日常饮用习惯的一部分。' },
-  { title: '送礼场景', desc: '以科技与标准作为沟通点，表达更体面。' },
-  { title: '渠道动销', desc: '可配合素材与培训，做内容种草与渠道赋能。' },
+  { title: '商务茶叙', desc: '即溶即饮，适合商务接待与高效沟通场景。' },
+  { title: '日常品饮', desc: '轻松冲调，适合作为高品质日常饮用选择。' },
+  { title: '高端礼赠', desc: '以科技工艺与品质表达，提升礼赠场景的体面感。' },
+  { title: '渠道陈列', desc: '兼顾展示质感与信息表达，适配门店陈列与合作洽谈。' },
 ]
 
 export default function Product() {
   return (
     <div className="mx-auto w-full max-w-5xl space-y-12">
-      <header className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 md:p-10">
-        <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-200">
-          产品
-        </div>
-        <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-          以标准化工艺，交付一致的速溶体验
-        </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-200">
-          本页面以企业官网口径展示核心信息。更完整的渠道资料、培训话术与背书材料，按需通过合作咨询提供。
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            to="/contact"
-            className="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
-          >
-            索取资料
-          </Link>
-          <Link
-            to="/brand"
-            className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
-          >
-            了解品牌
-          </Link>
+      <header className="overflow-hidden rounded-[2rem] border border-amber-200/70 bg-white/75 shadow-[0_24px_70px_rgba(120,53,15,0.07)]">
+        <div className="grid gap-8 p-8 md:p-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="space-y-6">
+            <div className="inline-flex rounded-full border border-amber-900/10 bg-amber-50/70 px-4 py-2 text-sm text-amber-800">
+              产品
+            </div>
+            <div className="space-y-4">
+              <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">
+                冻萃金花黑茶
+              </h1>
+              <p className="max-w-2xl text-base leading-8 text-gray-700">
+                以专属菌种体系、低温萃取与冻干结晶工艺为基础，呈现兼具便捷体验与礼赠质感的产品形态。
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-[1.25rem] border border-amber-900/10 bg-[#f8efe5] p-5">
+                <div className="text-xs uppercase tracking-[0.22em] text-gray-500">Form</div>
+                <div className="mt-3 text-base font-semibold text-gray-900">独立条包</div>
+                <p className="mt-2 text-sm leading-7 text-gray-700">
+                  即溶即饮，适配办公、差旅、礼赠与高端接待场景。
+                </p>
+              </div>
+              <div className="rounded-[1.25rem] border border-amber-900/10 bg-[#f8efe5] p-5">
+                <div className="text-xs uppercase tracking-[0.22em] text-gray-500">Delivery</div>
+                <div className="mt-3 text-base font-semibold text-gray-900">标准交付</div>
+                <p className="mt-2 text-sm leading-7 text-gray-700">
+                  稳定工艺与品控体系支撑礼赠、合作洽谈与渠道展示需求。
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/contact"
+                className="rounded-xl bg-gradient-to-r from-amber-600 to-amber-800 px-5 py-3 text-sm font-medium text-[#fffaf2] hover:from-amber-700 hover:to-amber-900"
+              >
+                了解合作
+              </Link>
+              <Link
+                to="/brand"
+                className="rounded-xl border border-amber-900/15 bg-white/80 px-5 py-3 text-sm font-medium text-gray-800 hover:bg-white"
+              >
+                了解品牌
+              </Link>
+            </div>
+          </div>
+
+          <div className="rounded-[1.75rem] border border-amber-200/70 bg-[radial-gradient(circle_at_top,#fff6df,transparent_55%),linear-gradient(180deg,#f8efe5,#efe2d1)] p-6">
+            <div className="flex min-h-[420px] items-center justify-center overflow-hidden rounded-[1.5rem] bg-white/70">
+              <img
+                src="/docs/logol/tt3.jpg"
+                alt="产品展示图"
+                className="h-full max-h-[420px] w-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </header>
 
       <section className="grid gap-4 md:grid-cols-3">
         {productCards.map((c) => (
-          <div key={c.title} className="rounded-2xl border border-white/10 bg-slate-900/55 p-6">
-            <div className="text-base font-semibold text-white">{c.title}</div>
-            <div className="mt-2 text-sm leading-6 text-zinc-200">{c.desc}</div>
+          <div
+            key={c.title}
+            className="rounded-[1.5rem] border border-amber-900/10 bg-white/75 p-6 shadow-[0_16px_40px_rgba(120,53,15,0.04)]"
+          >
+            <div className="text-base font-semibold text-gray-900">{c.title}</div>
+            <div className="mt-3 text-sm leading-7 text-gray-700">{c.desc}</div>
           </div>
         ))}
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 md:p-10">
-        <h2 className="text-2xl font-semibold text-white">应用场景</h2>
-        <p className="mt-2 text-zinc-200">围绕便捷性与一致性，适配多种生活与渠道场景。</p>
+      <section className="rounded-[2rem] border border-amber-200/70 bg-white/75 p-8 shadow-[0_24px_70px_rgba(120,53,15,0.05)] md:p-10">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-900">应用场景</h2>
+            <p className="mt-2 text-gray-700">围绕便捷体验、品质表达与礼赠属性，适配多元消费与合作场景。</p>
+          </div>
+          <div className="text-sm text-gray-500">适用于品饮、礼赠、接待与品牌展示等场景</div>
+        </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {scenarios.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-white/10 bg-black/30 p-6">
-              <div className="text-sm font-semibold text-white">{s.title}</div>
-              <div className="mt-2 text-sm leading-6 text-zinc-200">{s.desc}</div>
+            <div
+              key={s.title}
+              className="rounded-[1.5rem] border border-amber-900/10 bg-[#f8efe5] p-6"
+            >
+              <div className="text-sm font-semibold text-gray-900">{s.title}</div>
+              <div className="mt-2 text-sm leading-7 text-gray-700">{s.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-emerald-500/15 via-white/0 to-violet-500/15 p-8 md:p-10">
+      <section className="rounded-[2rem] border border-amber-200/70 bg-white/75 p-8 shadow-[0_20px_60px_rgba(120,53,15,0.06)] md:p-10">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-white">合作资料与样品</h2>
-            <p className="mt-2 text-zinc-200">对外不提供下载，资料按合作场景与版本管理进行发放。</p>
+            <h2 className="text-2xl font-semibold text-gray-900">合作支持</h2>
+            <p className="mt-2 text-gray-700">可根据合作方向提供品牌资料、样品支持与专属沟通服务。</p>
           </div>
           <Link
             to="/contact"
-            className="rounded-xl bg-emerald-400 px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-emerald-300"
+            className="rounded-xl bg-gradient-to-r from-amber-600 to-amber-800 px-5 py-3 text-sm font-medium text-[#fffaf2] hover:from-amber-700 hover:to-amber-900"
           >
-            去联系
+            联系咨询
           </Link>
         </div>
       </section>
