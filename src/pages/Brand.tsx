@@ -37,49 +37,46 @@ const credentials = [
 export default function Brand() {
   return (
     <div className="mx-auto w-full max-w-5xl">
-      {/* ── Header ── */}
-      <section className="py-14 lg:py-20">
+      <section className="py-10 sm:py-14 lg:py-20">
         <span className="inline-block rounded-full bg-amber-100 px-4 py-1.5 text-xs font-medium text-amber-700">
           品牌定位
         </span>
-        <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-stone-900">
+        <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-stone-900 sm:text-4xl md:text-5xl">
           用可验证的技术与标准，
           <br />
           <span className="text-amber-600">重新定义高端速溶黑茶</span>
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-stone-500">
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-stone-500 sm:mt-5 sm:text-base">
           黑氪金球（HK）围绕菌种体系、低温冻干工艺与标准化生产能力，构建稳定、可追溯的产品交付。
           对外表达坚持专业、克制与合规。
         </p>
       </section>
 
-      {/* ── Pillars ── */}
-      <section className="grid gap-6 sm:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-3 sm:gap-6">
         {pillars.map((p) => (
-          <div key={p.title} className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-stone-100">
+          <div key={p.title} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-100 sm:p-8">
             <div className="h-1 w-8 rounded-full bg-amber-500" />
-            <div className="mt-5 text-base font-semibold text-stone-900">{p.title}</div>
-            <div className="mt-2 text-sm leading-7 text-stone-500">{p.desc}</div>
+            <div className="mt-4 text-sm font-semibold text-stone-900 sm:mt-5 sm:text-base">{p.title}</div>
+            <div className="mt-2 text-sm leading-6 text-stone-500 sm:leading-7">{p.desc}</div>
           </div>
         ))}
       </section>
 
-      {/* ── Credentials ── */}
-      <section className="mt-20">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-stone-900">品牌背书</h2>
-          <p className="mt-2 text-stone-500">
+      <section className="mt-12 sm:mt-20">
+        <div className="mb-6 sm:mb-8">
+          <h2 className="text-xl font-bold text-stone-900 sm:text-2xl">品牌背书</h2>
+          <p className="mt-2 text-sm text-stone-500">
             主要围绕专利、菌种体系、生产标准与品质管理进行说明。资料按需提供，不在官网公开下载。
           </p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
           {credentials.map((c) => (
-            <div key={c.title} className="rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-100">
+            <div key={c.title} className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-stone-100 sm:p-7">
               <div className="flex items-start gap-3">
                 <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-amber-500" />
                 <div>
                   <div className="text-sm font-semibold text-stone-900">{c.title}</div>
-                  <div className="mt-2 text-sm leading-6 text-stone-500">{c.desc}</div>
+                  <div className="mt-1.5 text-sm leading-6 text-stone-500">{c.desc}</div>
                 </div>
               </div>
             </div>
@@ -87,23 +84,22 @@ export default function Brand() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="my-20 overflow-hidden rounded-3xl bg-stone-900 px-10 py-14 md:px-16">
-        <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+      <section className="my-12 overflow-hidden rounded-3xl bg-stone-900 px-6 py-10 sm:my-20 sm:px-10 sm:py-14 md:px-16">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-white">合作咨询</h2>
-            <p className="mt-2 text-stone-400">索取资料、沟通渠道政策与合作方式，请进入联系页。</p>
+            <h2 className="text-xl font-bold text-white sm:text-2xl">合作咨询</h2>
+            <p className="mt-1.5 text-sm text-stone-400 sm:mt-2">索取资料、沟通渠道政策与合作方式，请进入联系页。</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
               to="/contact"
-              className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-amber-400"
+              className="rounded-xl bg-amber-500 px-5 py-2.5 text-sm font-semibold text-stone-900 hover:bg-amber-400 sm:px-6 sm:py-3"
             >
               联系我们
             </Link>
             <Link
               to="/product"
-              className="rounded-xl border border-white/20 px-6 py-3 text-sm font-medium text-stone-300 hover:border-white/40 hover:text-white"
+              className="rounded-xl border border-white/20 px-5 py-2.5 text-sm font-medium text-stone-300 hover:border-white/40 hover:text-white sm:px-6 sm:py-3"
             >
               了解产品
             </Link>
