@@ -11,20 +11,15 @@ const navItems = [
 
 export default function TopNav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/70 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-4">
-        <NavLink
-          to="/"
-          className="flex items-center gap-2 text-base font-semibold tracking-wide text-white"
-        >
-          <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-white/90">
-            <img
-              src="/docs/logol/logol2.jpg"
-              alt="黑氪金球（HK）"
-              className="h-9 w-9 object-cover"
-            />
+    <header className="sticky top-0 z-50 border-b border-stone-200/70 bg-white/80 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-4">
+        <NavLink to="/" className="flex items-center gap-2.5">
+          <span className="inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl ring-1 ring-stone-200">
+            <img src="/docs/logol/logol2.jpg" alt="黑氪金球（HK）" className="h-9 w-9 object-cover" />
           </span>
-          <span className="hidden sm:inline">黑氪金球</span>
+          <span className="hidden text-base font-semibold tracking-wide text-stone-900 sm:inline">
+            黑氪金球
+          </span>
         </NavLink>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -34,8 +29,10 @@ export default function TopNav() {
               to={item.to}
               className={({ isActive }) =>
                 [
-                  'rounded-lg px-3 py-2 text-sm transition',
-                  isActive ? 'bg-white/10 text-white' : 'text-zinc-200 hover:text-white',
+                  'rounded-lg px-3.5 py-2 text-sm transition-colors',
+                  isActive
+                    ? 'bg-amber-50 font-medium text-amber-700'
+                    : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900',
                 ].join(' ')
               }
             >
@@ -46,22 +43,25 @@ export default function TopNav() {
 
         <NavLink
           to="/contact"
-          className="rounded-lg bg-white px-3 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+          className="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-stone-900 shadow-sm hover:bg-amber-400"
         >
           合作咨询
         </NavLink>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-4 pb-4 md:hidden">
-        <div className="flex flex-wrap gap-2">
+      {/* mobile nav */}
+      <div className="mx-auto w-full max-w-6xl border-t border-stone-100 px-6 pb-3 pt-2 md:hidden">
+        <div className="flex flex-wrap gap-1.5">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 [
-                  'rounded-lg px-3 py-2 text-sm transition',
-                  isActive ? 'bg-white/10 text-white' : 'bg-white/5 text-zinc-200 hover:text-white',
+                  'rounded-lg px-3 py-1.5 text-sm transition-colors',
+                  isActive
+                    ? 'bg-amber-50 font-medium text-amber-700'
+                    : 'bg-stone-100 text-stone-600 hover:text-stone-900',
                 ].join(' ')
               }
             >

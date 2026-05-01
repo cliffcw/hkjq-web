@@ -11,12 +11,11 @@ import Team from './pages/Team'
 
 export default function App() {
   return (
-    <div className="relative min-h-full bg-transparent text-zinc-100">
+    <div className="relative min-h-full bg-transparent text-stone-900">
       <SiteBackground />
       <div className="relative z-10">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-slate-950/35" />
         <TopNav />
-        <main className="mx-auto w-full max-w-6xl px-4 py-10">
+        <main className="mx-auto w-full max-w-6xl px-6">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/brand" element={<Brand />} />

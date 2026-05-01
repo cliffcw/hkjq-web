@@ -1,89 +1,230 @@
 import { Link } from 'react-router-dom'
 
-const productCards = [
-  {
-    title: '冻干速溶黑茶（主打单品）',
-    desc: '冻干结晶颗粒形态，即溶即饮，适配办公、差旅与日常饮用场景。',
-  },
-  {
-    title: '低温萃取与冻干结晶',
-    desc: '以低温流程降低热敏损耗风险，并通过冻干形成更稳定一致的形态。',
-  },
-  {
-    title: '标准化生产与品控',
-    desc: '以规范的生产与检测流程保障批次一致性，支持渠道规模化交付。',
-  },
+const specs = [
+  { label: '产品名称', value: '冷萃金花黑茶固体饮料' },
+  { label: '品牌', value: '黑氪金球（HK）' },
+  { label: '规格', value: '15g（1g × 15 条）' },
+  { label: '金花菌含量', value: '≥ 290 万/g，超国标 14 倍' },
+  { label: '干燥工艺', value: '≤45°C 药品级冻干，21 道纯物理工艺' },
+  { label: '冲泡方式', value: '冷热双溶 · 3 秒速溶' },
+  { label: '安全承诺', value: '0 糖 · 0 香精 · 0 激素 · 0 色素 · 0 防腐剂 · 纯天然' },
+  { label: '生产环境', value: 'GMP 10 万级洁净车间' },
+  { label: '菌种保藏', value: '湘丰 1 号，CGMCC No.41485，中科院微生物研究所' },
+  { label: '专利体系', value: '湘丰茶业 111 项专利，16 项保护精准发花技术' },
 ]
 
-const scenarios = [
-  { title: '办公便捷', desc: '一杯水即可冲调，减少冲泡门槛。' },
-  { title: '餐后饮用', desc: '适合作为日常饮用习惯的一部分。' },
-  { title: '送礼场景', desc: '以科技与标准作为沟通点，表达更体面。' },
-  { title: '渠道动销', desc: '可配合素材与培训，做内容种草与渠道赋能。' },
+const formula = [
+  { role: '君', name: '冻干金花黑茶', tag: '刮油降脂', desc: '金花菌代谢茯茶素 A/B，直接分解油腻，主攻脂肪' },
+  { role: '臣', name: '柑橘纤维', tag: '促进排便', desc: '水溶性膳食纤维，刺激肠道蠕动，辅助通便' },
+  { role: '佐', name: '冻干陈皮', tag: '理气消胀', desc: '橙皮苷 + 挥发油，促进脂肪分解，缓解腹胀' },
+  { role: '使', name: '冻干普洱', tag: '醇香陈化', desc: '增强口感层次，协同金花菌作用' },
 ]
+
+const dryingRows = [
+  { label: '加工温度', ours: '≤45°C', theirs: '≥120°C' },
+  { label: '茶多糖保留', ours: '≥90%', theirs: '≤30%' },
+  { label: '茶多酚保留', ours: '≥85%', theirs: '≤50%' },
+  { label: 'SOD 酶活性', ours: '基本保留', theirs: '完全失活' },
+  { label: '溶解性', ours: '冷热双溶 · 无沉淀', theirs: '仅热水 · 易结块' },
+  { label: '营养当量', ours: '1 条 ≈ 3–5 条普通', theirs: '流失 >70%' },
+]
+
+const compRows = [
+  { label: '金花菌含量', ours: '≥ 290 万/g', theirs: '≈ 210 万/g' },
+  { label: '发花技术', ours: '精准双锁工艺 · 99% 发花率', theirs: '国奖成果 · 99%' },
+  { label: '干燥工艺', ours: '≤45°C 药品级冻干', theirs: '未知' },
+  { label: '安全承诺', ours: '6 大不添加 · 纯天然', theirs: '未知' },
+  { label: '黄曲霉风险', ours: '0%（菌种自带拮抗）', theirs: '存在风险' },
+]
+
+function CompareTable({
+  title,
+  subtitle,
+  colA,
+  colB,
+  rows,
+}: {
+  title: string
+  subtitle: string
+  colA: string
+  colB: string
+  rows: { label: string; ours: string; theirs: string }[]
+}) {
+  return (
+    <section className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-stone-100">
+      <div className="border-b border-stone-100 p-8 md:p-10">
+        <h2 className="text-2xl font-bold text-stone-900">{title}</h2>
+        <p className="mt-2 text-sm text-stone-500">{subtitle}</p>
+      </div>
+      <table className="w-full text-sm">
+        <thead className="bg-stone-50">
+          <tr className="border-b border-stone-100">
+            <th className="px-8 py-3 text-left text-xs font-medium text-stone-400 md:px-10">对比维度</th>
+            <th className="px-4 py-3 text-left text-xs font-semibold text-amber-600">{colA}</th>
+            <th className="px-4 py-3 text-left text-xs font-medium text-stone-400">{colB}</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-stone-50">
+          {rows.map((row) => (
+            <tr key={row.label}>
+              <td className="px-8 py-3.5 text-stone-500 md:px-10">{row.label}</td>
+              <td className="px-4 py-3.5 font-medium text-stone-800">{row.ours}</td>
+              <td className="px-4 py-3.5 text-stone-400">{row.theirs}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )
+}
 
 export default function Product() {
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-12">
-      <header className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 md:p-10">
-        <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-200">
-          产品
-        </div>
-        <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-          以标准化工艺，交付一致的速溶体验
-        </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-200">
-          本页面以企业官网口径展示核心信息。更完整的渠道资料、培训话术与背书材料，按需通过合作咨询提供。
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            to="/contact"
-            className="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
-          >
-            索取资料
-          </Link>
-          <Link
-            to="/brand"
-            className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
-          >
-            了解品牌
-          </Link>
-        </div>
-      </header>
-
-      <section className="grid gap-4 md:grid-cols-3">
-        {productCards.map((c) => (
-          <div key={c.title} className="rounded-2xl border border-white/10 bg-slate-900/55 p-6">
-            <div className="text-base font-semibold text-white">{c.title}</div>
-            <div className="mt-2 text-sm leading-6 text-zinc-200">{c.desc}</div>
+    <div className="mx-auto w-full max-w-5xl">
+      {/* ── Header ── */}
+      <section className="grid items-center gap-12 py-14 lg:grid-cols-2 lg:py-20">
+        <div className="space-y-7">
+          <span className="inline-block rounded-full bg-amber-100 px-4 py-1.5 text-xs font-medium text-amber-700">
+            产品介绍
+          </span>
+          <h1 className="text-5xl font-bold leading-tight tracking-tight text-stone-900">
+            冷萃金花黑茶
+            <br />
+            <span className="text-amber-600">固体饮料</span>
+          </h1>
+          <p className="text-base leading-relaxed text-stone-500">
+            湘丰 1 号纯菌种 × 精准发花双锁工艺 × ≤45°C 药品级冻干 × 4 味黄金配方——
+            一克金花，胜十两茶砖。3 秒冷萃，替你扛住每一餐。
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              to="/contact"
+              className="rounded-xl bg-amber-500 px-6 py-3 text-sm font-semibold text-stone-900 shadow-sm hover:bg-amber-400"
+            >
+              索取合作资料
+            </Link>
+            <Link
+              to="/shop"
+              className="rounded-xl bg-white px-6 py-3 text-sm font-medium text-stone-700 shadow-sm ring-1 ring-stone-200 hover:bg-stone-50"
+            >
+              立即选购
+            </Link>
           </div>
-        ))}
+        </div>
+
+        <div className="relative flex items-end justify-center gap-6">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(251,191,36,0.12),transparent_65%)]" />
+          <div className="relative hidden translate-y-5 sm:block">
+            <img
+              src="/products/product-open.jpg"
+              alt="黑氪金球 开盖展示"
+              className="w-44 rotate-[-5deg] rounded-3xl shadow-xl shadow-stone-300/60"
+            />
+          </div>
+          <img
+            src="/products/product-box.jpg"
+            alt="黑氪金球 礼盒装"
+            className="relative w-52 rounded-3xl shadow-2xl shadow-stone-400/40"
+          />
+        </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 md:p-10">
-        <h2 className="text-2xl font-semibold text-white">应用场景</h2>
-        <p className="mt-2 text-zinc-200">围绕便捷性与一致性，适配多种生活与渠道场景。</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {scenarios.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-white/10 bg-black/30 p-6">
-              <div className="text-sm font-semibold text-white">{s.title}</div>
-              <div className="mt-2 text-sm leading-6 text-zinc-200">{s.desc}</div>
+      {/* ── Product photos ── */}
+      <section className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-stone-100">
+        <div className="grid sm:grid-cols-2">
+          <div className="bg-gradient-to-br from-amber-50 to-stone-100 p-10">
+            <img
+              src="/products/product-box.jpg"
+              alt="礼盒外观"
+              className="mx-auto max-w-xs rounded-2xl shadow-lg shadow-stone-300/50"
+            />
+            <div className="mt-6 text-center">
+              <div className="text-sm font-semibold text-stone-800">礼盒外观</div>
+              <div className="mt-1 text-xs text-stone-500">黑色哑光外盒，金色品牌标识，适合送礼与精品零售</div>
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-stone-50 to-amber-50/50 p-10">
+            <img
+              src="/products/product-open.jpg"
+              alt="内部结构"
+              className="mx-auto max-w-xs rounded-2xl shadow-lg shadow-stone-300/50"
+            />
+            <div className="mt-6 text-center">
+              <div className="text-sm font-semibold text-stone-800">内部结构</div>
+              <div className="mt-1 text-xs text-stone-500">金色内托，15 条独立铝箔袋，开盒即见档次，保鲜防潮</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Specs ── */}
+      <section className="mt-20">
+        <h2 className="mb-8 text-2xl font-bold text-stone-900">产品规格</h2>
+        <div className="grid gap-2 sm:grid-cols-2">
+          {specs.map((s) => (
+            <div
+              key={s.label}
+              className="flex items-start gap-4 rounded-xl bg-white px-5 py-4 shadow-sm ring-1 ring-stone-100"
+            >
+              <div className="w-24 flex-shrink-0 text-xs text-stone-400">{s.label}</div>
+              <div className="text-sm font-medium text-stone-800">{s.value}</div>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-gradient-to-r from-emerald-500/15 via-white/0 to-violet-500/15 p-8 md:p-10">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      {/* ── Formula ── */}
+      <section className="mt-20">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-stone-900">4 味黄金冻干配方</h2>
+          <p className="mt-2 text-stone-500">君臣佐使，刮油 · 通便 · 理气 · 陈化，协同增效。</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {formula.map((f) => (
+            <div key={f.role} className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-100">
+              <div className="flex items-center gap-2">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-sm font-bold text-amber-700">
+                  {f.role}
+                </span>
+                <span className="text-xs text-stone-400">{f.tag}</span>
+              </div>
+              <div className="mt-3 text-base font-semibold text-stone-900">{f.name}</div>
+              <div className="mt-1.5 text-xs leading-5 text-stone-500">{f.desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Compare tables ── */}
+      <div className="mt-20 space-y-6">
+        <CompareTable
+          title="≤45°C 冻干 vs 普通喷雾干燥"
+          subtitle="市面 90% 速溶茶是喷干——喝起来有茶味，营养早就被烫没了。"
+          colA="黑氪金球冻干"
+          colB="普通喷雾干燥"
+          rows={dryingRows}
+        />
+        <CompareTable
+          title="竞品全维对比"
+          subtitle="黑氪金球 vs 市场同类金花黑茶。"
+          colA="黑氪金球"
+          colB="市场同类"
+          rows={compRows}
+        />
+      </div>
+
+      {/* ── CTA ── */}
+      <section className="my-20 overflow-hidden rounded-3xl bg-stone-900 px-10 py-14 md:px-16">
+        <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-2xl font-semibold text-white">合作资料与样品</h2>
-            <p className="mt-2 text-zinc-200">对外不提供下载，资料按合作场景与版本管理进行发放。</p>
+            <h2 className="text-2xl font-bold text-white">获取合作资料与样品</h2>
+            <p className="mt-2 text-stone-400">资料按合作场景定向发放，不提供公开下载。</p>
           </div>
           <Link
             to="/contact"
-            className="rounded-xl bg-emerald-400 px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-emerald-300"
+            className="w-fit rounded-xl bg-amber-500 px-6 py-3 text-sm font-semibold text-stone-900 hover:bg-amber-400"
           >
-            去联系
+            联系我们
           </Link>
         </div>
       </section>

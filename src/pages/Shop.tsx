@@ -2,39 +2,69 @@ import { Link } from 'react-router-dom'
 
 export default function Shop() {
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-8">
-      <header className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 md:p-10">
-        <div className="inline-flex rounded-full border border-amber-300/30 bg-amber-300/15 px-4 py-2 text-sm text-amber-100">
+    <div className="mx-auto w-full max-w-5xl">
+      <section className="py-14 lg:py-20">
+        <span className="inline-block rounded-full bg-amber-100 px-4 py-1.5 text-xs font-medium text-amber-700">
           选购中心
-        </div>
-        <h1 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-          选购功能正在建设中
+        </span>
+        <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-stone-900">
+          选购功能
+          <br />
+          <span className="text-amber-600">即将上线</span>
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-200">
-          商城模块已纳入官网规划，当前正在进行功能建设与流程联调。上线后可在此直接下单购买。
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-stone-500">
+          商城模块正在建设与流程联调中，上线后可在此直接下单购买。
+          如需立即采购或咨询渠道价格，请先通过以下方式联系我们。
         </p>
-      </header>
-
-      <section className="rounded-3xl border border-white/10 bg-slate-900/55 p-8 md:p-10">
-        <h2 className="text-2xl font-semibold text-white">临时购买方式</h2>
-        <p className="mt-2 text-zinc-200">
-          如需立即采购、咨询渠道价格或样品，请先通过联系页对接，我们会提供当前可用购买路径。
-        </p>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link
             to="/contact"
-            className="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-950 hover:bg-zinc-200"
+            className="rounded-xl bg-amber-500 px-7 py-3.5 text-sm font-semibold text-stone-900 shadow-sm hover:bg-amber-400"
           >
-            去联系
+            联系购买
           </Link>
           <Link
             to="/product"
-            className="rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/10"
+            className="rounded-xl bg-white px-7 py-3.5 text-sm font-medium text-stone-700 shadow-sm ring-1 ring-stone-200 hover:bg-stone-50"
           >
-            查看产品
+            查看产品详情
           </Link>
         </div>
       </section>
+
+      <section className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-stone-100">
+        <div className="grid sm:grid-cols-2">
+          <div className="bg-gradient-to-br from-amber-50 to-stone-100 p-10">
+            <img
+              src="/products/product-box.jpg"
+              alt="黑氪金球 冷萃金花黑茶"
+              className="mx-auto max-w-xs rounded-2xl shadow-lg shadow-stone-300/50"
+            />
+          </div>
+          <div className="flex flex-col justify-center space-y-5 p-10">
+            <h2 className="text-xl font-bold text-stone-900">冷萃金花黑茶固体饮料</h2>
+            <ul className="space-y-3">
+              {[
+                '15g 礼盒装（1g × 15 条）',
+                '冷热双溶 · 3 秒速溶',
+                '0 糖 · 0 香精 · 6 大不添加',
+                '适合自用 · 送礼 · 渠道动销',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-sm text-stone-600">
+                  <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2 text-xs text-stone-400">
+              微信联系获取购买链接与渠道价格：
+              <span className="ml-1 font-mono text-stone-600">aodixiu0327</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="my-20" />
     </div>
   )
 }
